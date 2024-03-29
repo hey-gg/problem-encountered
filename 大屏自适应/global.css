@@ -1,0 +1,662 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+menu,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+
+body {
+  /* line-height: 1; */
+  display: inline-block;
+  width: 5760px;
+  height: 1620px;
+  transform-origin: 0 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: #000;
+}
+
+#root {
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: 思源黑体 CN Bold;
+  src: url('/font/SOURCEHANSANSCN-BOLD.OTF');
+}
+
+@font-face {
+  font-family: 思源黑体 CN ExtraLight;
+  src: url('/font/SOURCEHANSANSCN-EXTRALIGHT.OTF');
+}
+
+@font-face {
+  font-family: 思源黑体 CN Heavy;
+  src: url('/font/SOURCEHANSANSCN-HEAVY.OTF');
+}
+
+@font-face {
+  font-family: 思源黑体 CN Light;
+  src: url('/font/SOURCEHANSANSCN-LIGHT.OTF');
+}
+
+@font-face {
+  font-family: 思源黑体 CN Medium;
+  src: url('/font/SOURCEHANSANSCN-MEDIUM.OTF');
+}
+
+@font-face {
+  font-family: 思源黑体 CN Normal;
+  src: url('/font/SOURCEHANSANSCN-NORMAL.OTF');
+}
+
+@font-face {
+  font-family: Source Han Sans CN;
+  src: url('/font/SOURCEHANSANSCN-REGULAR.OTF');
+}
+
+@font-face {
+  font-family: YouSheBiaoTiHei;
+  src: url('/font/YOUSHEBIAOTIHEI-2.TTF');
+}
+
+@font-face {
+  font-family: AliHYAiHei;
+  src: url('/font/AliHYAiHei.ttf');
+}
+
+@font-face {
+  font-family: D-DIN;
+  src: url('/font/D-DIN.ttf');
+}
+
+@font-face {
+  font-family: D-DIN Condensed;
+  src: url('/font/D-DINCondensed.ttf');
+}
+
+/* 左边部分 */
+.page_left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1450px;
+  height: 1620px;
+  background: url(/allImg/bg_left.png) no-repeat center center / 100% 100%;
+  padding: 85px 78px 40px 30px;
+  box-sizing: border-box;
+  animation-name: slideLeft;
+  animation-duration: 1.5s;
+  background-size: 1414px 1583px;
+  background-position: 2px 23px;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  80% {
+    transform: translateX(50px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.page_right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1450px;
+  height: 1620px;
+  background: url(/allImg/bg_right.png) no-repeat center center / 100% 100%;
+  padding: 85px 45px 40px 80px;
+  box-sizing: border-box;
+  animation-name: slideRight;
+  animation-duration: 1.5s;
+  background-size: 1414px 1583px;
+  background-position: 32px 23px;
+}
+
+.page_right .right-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 19px;
+  width: 50px;
+  height: 344px;
+  z-index: 100;
+  background: url(/allImg/btn-11.jpg) no-repeat center center / 100% 100%;
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+  writing-mode: vertical-lr;
+  line-height: 2;
+}
+
+.page_right .right-btn:hover {
+  color: #d4fbff;
+  cursor: pointer;
+}
+
+.leftRoot {
+  width: 100%;
+
+  .ant-modal-mask {
+    position: inherit;
+  }
+
+  .ant-modal-wrap {
+    position: absolute;
+    right: 0;
+    overflow: visible;
+
+    .ant-modal {
+      top: 40px;
+      right: -1170px;
+    }
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(130%);
+  }
+
+  80% {
+    transform: translateX(-50px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.leftShowd {
+  height: 100%;
+  color: rgba(1, 174, 59, 0.8);
+  width: 34%;
+  top: 0;
+  pointer-events: none;
+  position: absolute;
+  background-image: linear-gradient(90deg,
+      rgb(7, 30, 53),
+      rgba(7, 30, 53, 0.95) 40%,
+      rgba(7, 30, 53, 0.9) 80%,
+      rgba(7, 30, 53, 0));
+  z-index: 1;
+}
+
+/* 三角形 */
+.right_sanj {
+  width: 0;
+  height: 0;
+  border-right: 15px solid skyblue;
+  border-color: #5ce9ff;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.left_sanj {
+  width: 0;
+  height: 0;
+  border-left: 15px solid skyblue;
+  border-color: #5ce9ff;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.eventStatistics1,
+.eventStatistics2 {
+  width: 50px;
+  height: 344px;
+  writing-mode: vertical-rl;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+
+  >span {
+    font-size: 24px;
+    font-family: Source Han Sans CN;
+    font-weight: 500;
+    color: #feffac;
+    line-height: 71px;
+    writing-mode: horizontal-tb;
+  }
+}
+
+.mapClick_box {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  position: absolute;
+  top: 1215px;
+  right: 1265px;
+}
+
+:where(.css-dev-only-do-not-override-12upa3x).ant-table-wrapper .ant-table-thead>tr>th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before,
+:where(.css-dev-only-do-not-override-12upa3x).ant-table-wrapper .ant-table-thead>tr>td:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+  display: none !important;
+}
+
+.backGovernance {
+  width: 120px;
+  height: 50px;
+  background-color: #fff;
+  position: absolute;
+  top: 200px;
+  right: 1500px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+/* 下拉框 */
+
+.gis-select {
+  width: 164px;
+  height: 49px;
+
+  .ant-select-selector {
+    height: 100% !important;
+    border: none !important;
+    /* background: url('/home/select-bg.png') no-repeat center center / 100% 100% !important; */
+    font-size: 24px;
+    font-weight: 500;
+    color: #ffffff;
+    padding: 0 22px !important;
+  }
+
+  .ant-select-selection-item {
+    line-height: 49px !important;
+    text-align: left;
+    font-size: 24px;
+    color: #ffffff !important;
+  }
+
+  .ant-select-arrow {
+    width: 0;
+    height: 0;
+    margin-top: 0 !important;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 9px solid #8ee6ef;
+    inset-inline-end: 22px !important;
+    /* 可自定义颜色 */
+  }
+}
+
+/* 下拉框菜单 */
+.gis-select-dropdown {
+  color: #fff !important;
+  /* border-image: linear-gradient(0deg, #8EE6EF, #8EE6EF) 10 10; */
+  background: linear-gradient(180deg, #0c6161 0%, #0c6161 100%);
+  border-radius: 4px;
+
+  .ant-select-item {
+    color: #fff !important;
+    padding: 20px 14px;
+  }
+
+  .ant-select-item-option-content {
+    font-size: 22px;
+  }
+
+  .ant-select-dropdown-menu,
+  .ant-select-dropdown-menu-root,
+  .ant-select-dropdown-menu-vertical li {
+    color: #fff !important;
+  }
+
+  .ant-select-item-option-active:not(.ant-select-item-option-disabled),
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background-color: rgba(31, 173, 164, 0.8) !important;
+  }
+
+  .ant-select-tree {
+    color: #fff !important;
+    background: transparent !important;
+    border: none !important;
+
+    .ant-select-tree-node-content-wrapper {
+      font-size: 22px !important;
+      height: 40px;
+      line-height: 40px;
+    }
+
+    .ant-select-tree-node-content-wrapper:hover {
+      background: rgba(31, 173, 164, 0.4) !important;
+      height: 40px;
+      line-height: 40px;
+    }
+
+    .ant-select-tree-node-content-wrapper.ant-select-tree-node-selected {
+      background: rgba(31, 173, 164, 0.4) !important;
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+}
+
+.ant-table .ant-table-tbody>tr.ant-table-row:hover>td {
+  background-color: #1c5b6e !important;
+}
+
+.ant-tooltip-inner {
+  font-size: 24px;
+}
+
+/* 分页 */
+.ant-pagination {
+  zoom: 1.4 !important;
+
+  >li {
+    background-color: #023146 !important;
+
+    >a {
+      color: white !important;
+      font-weight: 600;
+    }
+
+    >button>.action {
+      zoom: 10;
+      color: white !important;
+    }
+
+    .anticon,
+    .ant-pagination-item-ellipsis {
+      color: #ffffff !important;
+    }
+
+    .action svg {
+      color: #ffffff !important;
+    }
+  }
+}
+
+/* 按钮样式 */
+.btn_allStyle {
+  border: 1px solid rgba(142, 230, 239, 0.5);
+  /* border-image: linear-gradient(0deg, #8EE6EF, #8EE6EF) 10 10; */
+  background: linear-gradient(180deg,
+      rgba(12, 95, 95, 0.62) 0%,
+      rgba(12, 95, 95, 0.62) 100%);
+  border-radius: 4px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.gis-input {
+  width: 200px;
+  height: 49px;
+  background: rgba(33, 141, 157, 0.3);
+  border: 1px solid rgba(142, 230, 239, 0.5);
+  font-size: 24px;
+  color: #fff;
+
+  &::placeholder {
+    color: #b0d8df;
+  }
+}
+
+.tdt-label {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.ant-select .ant-select-arrow .anticon {
+  background-color: transparent;
+  color: transparent;
+}
+
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  height: 48px;
+  background: rgb(12, 97, 97, 0.6) !important;
+  font-size: 24px;
+  border: 1px solid #8ee6ef !important;
+}
+
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector:hover {
+  border: 1px solid #8ee6ef !important;
+}
+
+.ant-cascader {
+  width: 220px;
+  margin-right: 10px;
+}
+
+.ant-select-selection-item {
+  line-height: 44px !important;
+  color: white;
+}
+
+.ant-cascader-menu {
+  background: linear-gradient(180deg, #0c6161 0%, #0c6161 100%);
+  font-size: 24px;
+  color: #fff;
+}
+
+.ant-cascader-menu-item .ant-cascader-menu-item-expand {
+  background: linear-gradient(180deg, #107070 0%, #0c6161 100%);
+}
+
+.ant-cascader-dropdown .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled),
+.ant-cascader-dropdown .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled):hover {
+  background: linear-gradient(180deg, #27a4a4 0%, #2eacac 100%);
+}
+
+.ant-cascader-dropdown .ant-cascader-menu {
+  height: 280px;
+}
+
+.ant-cascader-menu-item-expand-icon {
+  color: #fff !important;
+}
+
+.ant-cascader-menu::-webkit-scrollbar {
+  width: 5px !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  display: none !important;
+}
+
+.ant-select-single.ant-select-open .ant-select-selection-item {
+  color: #fff !important;
+}
+
+.ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector {
+  border: 1px solid rgba(142, 230, 239, 0.5) !important;
+}
+
+.ant-select-arrow {
+  width: 0;
+  height: 0;
+  margin-top: 0 !important;
+  top: 46% !important;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 9px solid #8ee6ef;
+  inset-inline-end: 22px !important;
+  /* 可自定义颜色 */
+}
+
+.ant-select-focused.ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer),
+.ant-select-selector {
+  border-color: rgba(142, 230, 239, 0.5) !important;
+}
+
+.ant-popconfirm .ant-popconfirm-buttons {
+  white-space: nowrap;
+}
+
+.tbNameFont {
+  font-size: 28px !important;
+  color: #d4fbff !important;
+}
+
+.tbNumberFont {
+  font-size: 32px !important;
+  color: #ffffff !important;
+}
+
+.tbUnitFont {
+  font-size: 24px !important;
+  color: #d4fbff !important;
+}
+
+.ant-table-wrapper .ant-table-tbody>tr>td.ant-table-cell-row-hover {
+  background: #1c5b6e !important;
+}
+
+.ant-table-wrapper .ant-table-tbody>.ant-table-row_selected>td {
+  background: #1c5b6e !important;
+}
+
+.title-article {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 600 !important;
+  padding: 0 120px;
+  position: relative;
+}
+
+.article-content {
+  font-size: 24px;
+  line-height: 30px;
+  padding: 24px 120px;
+  box-sizing: border-box;
+}
+
+.article-content p,
+.article-content span {
+  color: #fff !important;
+  font-size: 28px !important;
+  line-height: 48px !important;
+  font-weight: 500 !important;
+}
+
+.article-content img {
+  width: 70%;
+  display: flex;
+  margin: 40px auto !important;
+}
+
+.eventDtailsBtn {
+  height: 36px;
+  cursor: pointer;
+  padding: 10px 20px;
+  background: url("/allImg/background.png") no-repeat 100% 100% / 100% 100%;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+}
